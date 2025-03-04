@@ -1,0 +1,22 @@
+# Ignorar a pasta vendor (onde as dependências do Composer são armazenadas)
+vendor/
+
+# Ignorar o arquivo composer.lock (caso não queira versioná-lo, mas recomendável para apps)
+composer.lock
+
+# Ignorar o arquivo composer.phar
+/composer.phar
+
+# Ignorar os diretórios de autoload do Composer
+/composer/
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos temporários ou de backup de editores
+*.swp
+*~
+
+# Ignorar arquivos do sistema (ex: .DS_Store para macOS)
+.DS_Store
+Thumbs.db
