@@ -15,11 +15,11 @@ $telefone = $faker->phoneNumber;
 $data_nascimento = $faker->date('d/m/Y');
 
 // Exibir os dados gerados
-echo "Nome: " . $nome . "\n";
-echo "Email: " . $email . "\n";
-echo "CPF: " . $cpf . "\n";
-echo "Endereço: " . $endereco . "\n";
-echo "Telefone: " . $telefone . "\n";
-echo "Data de Nascimento: " . $data_nascimento . "\n";
+echo "Nome: " . $nome . "\n <br>";
+echo "Email: " . $email . "\n <br>";
+echo "CPF: " . $cpf . "\n <br>";
+echo "Endereço: " . $endereco . "\n <br>";
+echo "Telefone: " . $telefone . "\n <br>";
+echo "Data de Nascimento: " . $data_nascimento . "\n <br>";
 
 ?>
