@@ -1,0 +1,375 @@
+/* Reset de estilo básico para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #6a1b9a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Espaçamento adicional para o conteúdo, já que o cabeçalho é fixo */
+body {
+    padding-top: 80px;
+}
+
+/* Estilo da área de conteúdo */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilo dos links */
+a {
+    color: #6a1b9a;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4e1a7d;
+}
+
+/* Botões */
+button, .btn {
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-right: 10px; /* Espaço à direita do botão */
+    margin-bottom: 10px; /* Espaço abaixo do botão */
+}
+
+/* Ajustando o botão quando estiver em uma linha */
+button:hover, .btn:hover {
+    background-color: #4e1a7d;
+}
+
+/* Quando houver múltiplos botões na mesma linha, remove a margem direita no último botão */
+button:last-child, .btn:last-child {
+    margin-right: 0; /* Remove o espaçamento do último botão */
+}
+
+/* Caso os botões estejam dentro de um container flexível */
+.button-container {
+    display: flex;
+    flex-wrap: wrap; /* Para permitir que os botões se movam para a linha seguinte, se necessário */
+    gap: 10px; /* Espaçamento entre os botões */
+    justify-content: center; /* Centraliza os botões na linha */
+}
+
+/* Seções de conteúdo */
+section {
+    margin-bottom: 40px;
+}
+
+/* Títulos de seções */
+h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Parágrafos e textos */
+p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Estilo para listas */
+ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Estilos para a seção de contato */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form form div {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.contact-form button:hover {
+    background-color: #4e1a7d;
+}
+
+.contact-form .error {
+    color: red;
+    font-size: 14px;
+}
+
+.alert-success {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/* Seção de boas-vindas */
+.welcome-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-section h1 {
+    text-align: center;
+    color: #6a1b9a;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.welcome-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.welcome-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+}
+
+.welcome-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.welcome-section ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.welcome-section .cta {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.welcome-section .btn {
+    padding: 12px 20px;
+    background-color: #6a1b9a;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.welcome-section .btn:hover {
+    background-color: #4e1a7d;
+}
+
+/* Estilos para a página Sobre Nós */
+.about-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h1 {
+    text-align: center;
+    color: #6a1b9a;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+}
+
+.about-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about-section ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.about-section .cta {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.about-section .btn {
+    padding: 12px 20px;
+    background-color: #6a1b9a;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.about-section .btn:hover {
+    background-color: #4e1a7d;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    /* Ajustes para telas pequenas */
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .welcome-section, .about-section {
+        padding: 15px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .contact-form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    p, ul li {
+        font-size: 1rem;
+    }
+
+    .welcome-section h1 {
+        font-size: 28px;
+    }
+
+    .about-section h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para telas menores, como smartphones */
+    header {
+        padding: 15px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .welcome-section h1 {
+        font-size: 24px;
+    }
+
+    .about-section h1 {
+        font-size: 24px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}
