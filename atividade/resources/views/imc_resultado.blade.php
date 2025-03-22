@@ -11,5 +11,9 @@
     <p><strong>IMC:</strong> {{ number_format($imc, 2) }}</p>
     <p><strong>Classificação:</strong> {{ $classificacao }}</p>
 
-    <a href="{{ route('imc.form') }}" class="btn">Calcular novamente</a>
+    <!-- Div que envolve os botões para centralizar -->
+    <div class="button-container">
+        <a href="{{ route('imc.form') }}" class="btn">Avaliar novamente</a>
+        <a href="{{ url('/') }}" class="btn-voltar">Voltar à Página Inicial</a>
+    </div>
 @endsection

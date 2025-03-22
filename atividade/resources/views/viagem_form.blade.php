@@ -15,7 +15,7 @@
             <label for="consumo_carro">Consumo do Carro (km/litro):</label>
             <input type="number" step="0.01" name="consumo_carro" id="consumo_carro" required><br>
 
-            <button type="submit">Calcular Gasto</button>
+            <button class="btnenv" type="submit">Calcular Gasto</button>
         </form>
     </div>
 @endsection

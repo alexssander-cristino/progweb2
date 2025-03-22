@@ -15,6 +15,6 @@
         <label for="altura">Altura (m):</label>
         <input type="number" step="0.01" name="altura" id="altura" required><br>
 
-        <button type="submit">Calcular IMC</button>
+        <button class="btnenv" type="submit">Calcular IMC</button>
     </form>
 @endsection

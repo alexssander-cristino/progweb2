@@ -8,5 +8,9 @@
     <p><strong>Horas de Sono:</strong> {{ $horas_sono }} horas</p>
     <p><strong>Qualidade do Sono:</strong> {{ $qualidade }}</p>
 
-    <a href="{{ route('sono.form') }}" class="btn">Avaliar novamente</a>
+    <!-- Div que envolve os botões para centralizar -->
+    <div class="button-container">
+        <a href="{{ route('sono.form') }}" class="btn">Avaliar novamente</a>
+        <a href="{{ url('/') }}" class="btn-voltar">Voltar à Página Inicial</a>
+    </div>
 @endsection
