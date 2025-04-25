@@ -1,0 +1,202 @@
+/* Reset básico para garantir que todos os elementos comecem com um estilo padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo global do corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Container para centralizar o conteúdo */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo de cabeçalho */
+h1 {
+    text-align: center;
+    color: #3498db;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Estilos para os formulários */
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+form input[type="number"],
+form input[type="text"],
+form input[type="date"],
+form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Estilo para os resultados */
+.resultado {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: center;
+}
+
+.resultado p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.resultado .resultado-imc {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.resultado .classificacao {
+    font-size: 1.2rem;
+    color: #16a085;
+}
+
+/* Link para voltar ao formulário */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para a página inicial */
+.page-inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    text-align: center;
+}
+
+.page-inicio a {
+    display: block;
+    font-size: 1.25rem;
+    padding: 15px 30px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.page-inicio a:hover {
+    background-color: #2980b9;
+}
+
+/* Botão de voltar para a página inicial (aplicado para o botão no resultado) */
+.btn-voltar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+}
+
+.btn-voltar:hover {
+    background-color: #1976D2;
+}
+
+.button-container{
+    margin: 50px;
+    text-align: center;
+}
+
+.btnenv {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #30f;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: background-color 0.4s ease;
+}
+
+.btnenv:hover {
+    background-color: #60f;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    form input[type="submit"] {
+        font-size: 1rem;
+    }
+
+    .resultado p,
+    .resultado .resultado-imc,
+    .resultado .classificacao {
+        font-size: 1rem;
+    }
+}
