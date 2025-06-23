@@ -13,7 +13,8 @@ class CreateEventsTable extends Migration
             $table->string('nome');
             $table->text('descricao')->nullable();
             $table->string('local')->nullable();
-            $table->date('data_evento')->nullable();
+            $table->date('data_evento');
+            $table->integer('pontos')->default(10); // Pontos por participação
             $table->timestamps();
         });
     }

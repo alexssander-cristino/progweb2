@@ -1,21 +1,20 @@
 <?php
 
-// app/Models/Donation.php
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Donation extends Model
 {
     use HasFactory;
 
-    // Campos preenchíveis
     protected $fillable = [
-        'donor_name', // Nome do doador
-        'amount',     // Valor da doação
-        'date',       // Data da doação
+        'volunteer_id', 'donor_name', 'type', 'amount', 'date'
     ];
+
+    public function volunteer()
+    {
+        return $this->belongsTo(Volunteer::class);
+    }
 }
-
-

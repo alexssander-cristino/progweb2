@@ -14,6 +14,7 @@ class CreateVolunteersTable extends Migration
             $table->string('email')->unique();
             $table->string('phone')->nullable();
             $table->text('skills')->nullable();
+            $table->integer('points')->default(0); // sistema de pontuação
             $table->timestamps();
         });
     }

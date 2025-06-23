@@ -1,38 +1,28 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VolunteerController;
+use App\Http\Controllers\DonationController;
+use App\Http\Controllers\EventController;
+
 
 // Página inicial
 Route::get('/', function () {
-    return view('index');
-});
+    return view('welcome');
+})->name('home');
 
-// Cadastro de usuário
-Route::get('/cadastro', function () {
-    return view('cadastro_usuario');
-});
+Route::get('/dashboard', function () {
+    return redirect()->route('home');
+})->name('dashboard');
 
-// Edição de usuário
-Route::get('/editar', function () {
-    return view('editar_usuario');
-});
 
-// Progresso do usuário
-Route::get('/progresso', function () {
-    return view('progresso_usuario');
-});
+// Voluntários CRUD
+Route::resource('volunteers', VolunteerController::class);
 
-// Pesquisa
-Route::get('/pesquisa', function () {
-    return view('pesquisa');
-});
+// Doações CRUD
+Route::resource('donations', DonationController::class);
 
-// Ranking
-Route::get('/ranking', function () {
-    return view('rank');
-});
+// Eventos CRUD
+Route::resource('events', EventController::class);
 
-// Detalhes dos pontos
-Route::get('/detalhes', function () {
-    return view('detalhes_pontos');
-});
+

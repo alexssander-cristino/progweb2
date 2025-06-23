@@ -7,40 +7,62 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    // Método para exibir a lista de eventos
     public function index()
     {
-        // Recupera todos os eventos do banco de dados
-        $eventos = Event::all();
-        
-        // Verifique se os eventos estão sendo passados para a view
-        \Log::info('Eventos: ', $eventos->toArray());
-
-        // Retorna a view com os eventos
-        return view('events.index', compact('eventos'));
+        $events = Event::orderBy('data_evento', 'asc')->get();
+        return view('events.index', compact('events'));
     }
 
-    // Método para exibir o formulário de criação de evento
     public function create()
     {
         return view('events.create');
     }
 
-    // Método para armazenar um novo evento no banco de dados
     public function store(Request $request)
     {
-        // Validação dos dados recebidos
-        $validated = $request->validate([
+        $request->validate([
             'nome' => 'required|string|max:255',
             'descricao' => 'nullable|string',
             'local' => 'nullable|string|max:255',
-            'data_evento' => 'nullable|date',
+            'data_evento' => 'required|date',
         ]);
 
-        // Criar e salvar o evento no banco de dados
-        Event::create($validated);
+        Event::create($request->all());
 
-        // Redirecionar para a lista de eventos com uma mensagem de sucesso
-        return redirect()->route('events.index')->with('sucesso', 'Evento criado com sucesso!');
+        return redirect()->route('events.index')->with('success', 'Evento criado com sucesso!');
+    }
+
+    public function show($id)
+    {
+        $event = Event::findOrFail($id);
+        return view('events.show', compact('event'));
+    }
+
+    public function edit($id)
+    {
+        $event = Event::findOrFail($id);
+        return view('events.edit', compact('event'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $event = Event::findOrFail($id);
+
+        $request->validate([
+            'nome' => 'required|string|max:255',
+            'descricao' => 'nullable|string',
+            'local' => 'nullable|string|max:255',
+            'data_evento' => 'required|date',
+        ]);
+
+        $event->update($request->all());
+
+        return redirect()->route('events.index')->with('success', 'Evento atualizado com sucesso!');
+    }
+
+    public function destroy($id)
+    {
+        Event::destroy($id);
+        return redirect()->route('events.index')->with('success', 'Evento removido com sucesso!');
     }
 }

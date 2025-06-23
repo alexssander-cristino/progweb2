@@ -3,42 +3,47 @@
 namespace App\Http\Controllers;
 
 use App\Models\Donation;
+use App\Models\Volunteer;
 use Illuminate\Http\Request;
 
 class DonationController extends Controller
 {
-    // Exibe o formulário de criação de doação
-    public function create()
-    {
-        return view('donations.create');
-    }
-
-    public function index()
+  public function index()
 {
-    $donations = Donation::all();  // Recupera todas as doações
-    return view('donations.index', compact('donations'));  // Passa para a view
+    $donations = Donation::with('volunteer')->get();
+    return view('donations.index', compact('donations'));
 }
 
-    // Armazena a doação no banco de dados
     public function store(Request $request)
+{
+    $request->validate([
+        'donor_name' => 'required|string|max:255',
+        'amount' => 'required|numeric|min:0',
+        'date' => 'required|date',
+        'volunteer_id' => 'nullable|exists:volunteers,id',
+    ]);
+
+    Donation::create($request->all());
+
+    return redirect()->route('donations.index')->with('success', 'Doação cadastrada!');
+}
+
+
+    public function show($id)
     {
-        // Validação dos dados do formulário
-        $validated = $request->validate([
-            'donor_name' => 'required|string|max:255',
-            'amount' => 'required|numeric|min:0.01',
-            'date' => 'required|date',
-        ]);
+        return Donation::findOrFail($id);
+    }
 
-        // Criação e salvamento da doação no banco
-        $donation = new Donation();
-        $donation->donor_name = $validated['donor_name'];
-        $donation->amount = $validated['amount'];
-        $donation->date = $validated['date'];
-        $donation->save();
+    public function update(Request $request, $id)
+    {
+        $donation = Donation::findOrFail($id);
+        $donation->update($request->all());
+        return response()->json($donation);
+    }
 
-        // Redireciona de volta para o formulário de criação com uma mensagem de sucesso
-        return redirect()->route('donations.create')->with('success', 'Doação registrada com sucesso!');
+    public function destroy($id)
+    {
+        Donation::destroy($id);
+        return response()->json(null, 204);
     }
 }
-
-
